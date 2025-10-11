@@ -1,0 +1,55 @@
+<div class="container mt-4 med-3">
+  <h3>Zodiaco chino</h3>
+
+
+  <form [formGroup]="formulario">
+    <div class="card mb-3 p-3">
+
+      <p>Datos personales: </p>
+
+      <label for="nombre" class="from-label">Nombre:</label>
+      <input type="text" id="nombre" class="form-control" formControlName="nombre">
+
+      <label for="aPaterno" class="from-label">Apellido Paterno:</label>
+      <input type="text" id="aPaterno" class="form-control" formControlName="aPaterno">
+
+      <label for="aMaterno" class="from-label">Apellido Materno</label>
+      <input type="text" id="aMaterno" class="form-control" formControlName="aMaterno">
+
+    </div>
+
+
+    <div class="card mb-3 p-3">
+      <p>Fecha de nacimiento</p>
+
+      <label for="dia" class="from-label">Día:</label>
+      <input type="number" id="dia" class="form-control" formControlName="dia">
+
+      <label for="mes" class="from-label">Mes:</label>
+      <input type="number" id="mes" class="form-control" formControlName="mes">
+
+      <label for="anio" class="from-label">Año:</label>
+      <input type="number" id="anio" class="form-control" formControlName="anio">
+    </div>
+
+    <div class="card mb-3 p-3">
+      <p>Sexo</p>
+      <div>
+        <input type="radio" id="masculino" value="Masculino" name="sexo" formControlName="sexo">
+        <label for="masculino">Masculino</label>
+
+        <input type="radio" id="femenino" value="Femenino" name="sexo" formControlName="sexo" class="ms-3">
+        <label for="femenino">Femenino</label>
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-outline-dark" (click)="calcular()">Imprimir Resultado : </button>
+      </div>
+      <div>
+        <p class="text-center">{{ resultado }}</p>
+         <img [src]="image" alt="Signo Chino" width="250" class="rounded shadow-sm mt-3">
+      </div>
+
+    </div>
+  </form>
+</div>

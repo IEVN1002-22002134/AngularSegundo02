@@ -13,7 +13,7 @@ describe('MultiplicacionComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(MultiplicacionComponent);
-    component = fixture.componentInstance;
+    component = fixture.componentInstance;  
     fixture.detectChanges();
   });
 

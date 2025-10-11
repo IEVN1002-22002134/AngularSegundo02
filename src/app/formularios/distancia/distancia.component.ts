@@ -15,7 +15,7 @@ export class DistanciaComponent {
   resultado!: number;
   objMult = new Distancia();
 
-  constructor() { }
+  /*constructor() { }*/
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
