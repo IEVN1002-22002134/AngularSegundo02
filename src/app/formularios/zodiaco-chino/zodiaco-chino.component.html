@@ -1,4 +1,4 @@
-<div class="container mt-4 med-3">
+<!-- <div class="container mt-4 med-3">
   <h3>Zodiaco chino</h3>
 
 
@@ -53,3 +53,61 @@
     </div>
   </form>
 </div>
+ -->
+
+
+
+<form [formGroup]="formulario" class="max-w-md mx-auto">
+  <br>
+
+  <p class="max-w-lg text-3xl text-center font-semibold text-gray-900 dark:text-black">Zodiaco Chino: </p><br>
+   <br>
+   <p>Datos Personales:  </p>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="text"  id="nombre" formControlName="nombre" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-black-600 peer" placeholder="" required />
+      <label for="nombre" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-purple-400 peer-focus:dark:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre: : </label>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="text"  id="aPaterno" formControlName="aPaterno" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-black-600 peer" placeholder="" required />
+      <label for="aPaterno" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-purple-400 peer-focus:dark:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido Paterno: </label>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="text"  id="aMaterno" formControlName="aMaterno" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-black-600 peer" placeholder="" required />
+      <label for="aMaterno" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-purple-400 peer-focus:dark:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido Materno: </label>
+  </div><br>
+  <p>Fecha de Namcimeinto: </p>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="number"  id="dia"  formControlName="dia" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-black-600 peer" placeholder="" required />
+      <label for="dia" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-purple-400 peer-focus:dark:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Día: </label>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="number"  id="mes"  formControlName="mes" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-black-600 peer" placeholder="" required />
+      <label for="mes" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-purple-400 peer-focus:dark:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mes: </label>
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+      <input type="number"  id="anio"  formControlName="anio" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-black-600 peer" placeholder="" required />
+      <label for="anio" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-purple-400 peer-focus:dark:text-purple-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Año: </label>
+  </div><br>
+  <p>Sexo: </p><br>
+   <div class="flex items-center mb-4">
+    <input id="femenino" type="radio" name="sexo" value="Femenino" formConrolName="sexo" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked>
+    <label for="masculino" class="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">
+      Femenino
+    </label>
+  </div>
+   <div class="flex items-center mb-4">
+    <input id="masculino" type="radio" name="sexo" value="Masculino" formConrolName="sexo" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked>
+    <label for="masculino" class="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">
+      Masculino
+    </label>
+  </div>
+
+  <button type="button" (click)="calcular()" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Calcular el signo</button><br>
+     <div><br>
+        <p class="text-center">{{ resultado }}</p>
+         <img [src]="image" alt="Signo Chino" width="250" class="rounded shadow-sm mt-3">
+      </div>
+</form>
+
+
+

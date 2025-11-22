@@ -5,6 +5,8 @@ import { RouterOutlet } from '@angular/router';
 import { ZodiacoChinoComponent } from "./formularios/zodiaco-chino/zodiaco-chino.component"; */
 import { NavbarComponent } from "./navbar/navbar.component";
 import { initFlowbite } from 'flowbite';
+import { TemhComponent } from "./tem/temh/temh.component";
+import { TempComponent } from "./tem/temp/temp.component";
 
 @Component({
   selector: 'app-root',

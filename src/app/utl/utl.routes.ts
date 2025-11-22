@@ -1,24 +1,22 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
-
 export default [
   {
     path: 'agregar',
-    loadComponent: () => import('./agregar/agregar.component')
+    loadComponent: () => import('./agregar/agregar.component').then(m=> m.AgregarComponent)
   },
   {
-    path: 'alistalumnos',
-    loadComponent: () => import('./alumnos/alumnos.component')
+    path: 'listaalumnos',
+    loadComponent: () => import('./alumnos/alumnos.component').then(m=> m.AlumnosComponent)
   },
   {
     path: 'eliminar/:matricula',
-    loadComponent: () => import('./eliminar/eliminar.component')
+    loadComponent: () => import('./eliminar/eliminar.component').then(m=> m.EliminarComponent)
   },
   {
     path: 'editar/:matricula',
-    loadComponent: () => import('./editar/editar.component')
+    loadComponent: () => import('./editar/editar.component').then(m=> m.EditarComponent)
   }
 
-]
+]as Routes
 
