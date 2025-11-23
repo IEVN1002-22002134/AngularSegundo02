@@ -1,0 +1,57 @@
+<div
+  class="flex items-center justify-center py-10 min-h-screen"
+  style="background-color: #f7fcfb;"
+>
+  <div
+    class="w-full max-w-sm bg-white rounded-[32px] shadow-2xl p-10 mx-auto relative overflow-hidden"
+    style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05); border: 1px solid #e0f2f1;"
+  >
+
+    <div
+      class="absolute top-[-40px] right-[-40px] w-40 h-40 rounded-full opacity-30"
+      style="background-color: #4db6ac;"
+    ></div>
+    <div
+      class="absolute bottom-[-80px] left-[-80px] w-64 h-64 rounded-full opacity-30"
+      style="background-color: #4db6ac;"
+    ></div>
+
+    <div class="relative z-10 flex flex-col items-center">
+
+      <h2 class="text-xl font-semibold text-gray-800 mb-6 text-center tracking-wider">
+        ESCANÉAME EN UNA EMERGENCIA
+      </h2>
+
+      <div class="border-b w-full mb-8"></div>
+
+      <div
+        class="w-48 h-48 flex items-center justify-center mb-10"
+        style="color: #00796b;"
+      >
+        <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 12H4V4h8v8zM42 12H34V4h8v8zM12 42H4V34h8v8zM24 24h6v6h-6zM32 16h4M32 20h4M38 16h4M38 20h4M16 32h4M16 36h4M20 32h4M20 36h4M32 32h4M32 36h4M38 32h4M38 36h4"/>
+        </svg>
+      </div>
+
+      <div class="flex justify-between w-full space-x-4">
+
+        <button
+          (click)="descargarQR()"
+          class="flex-1 text-white font-semibold rounded-full text-base px-5 py-3 transition duration-150 ease-in-out hover:bg-teal-700"
+          style="background-color: #4db6ac; box-shadow: 0 4px 6px -1px rgba(77, 182, 172, 0.4);"
+        >
+          DESCARGAR
+        </button>
+
+        <button
+          (click)="compartirQR()"
+          class="flex-1 text-white font-semibold rounded-full text-base px-5 py-3 transition duration-150 ease-in-out hover:bg-teal-700"
+          style="background-color: #4db6ac; box-shadow: 0 4px 6px -1px rgba(77, 182, 172, 0.4);"
+        >
+          COMPARTIR
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

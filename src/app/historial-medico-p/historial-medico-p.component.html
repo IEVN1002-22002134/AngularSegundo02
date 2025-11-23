@@ -1,0 +1,105 @@
+<div
+  class="flex items-start justify-center py-10 min-h-screen"
+  style="background-color: #f7fcfb;"
+>
+  <div
+    class="w-full max-w-4xl bg-white rounded-[32px] shadow-2xl p-10 mx-auto relative overflow-hidden"
+    style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05); border: 1px solid #e0f2f1;"
+  >
+
+    <div
+      class="absolute top-[-50px] right-[-50px] w-48 h-48 rounded-full opacity-13"
+      style="background-color: #2abaac;"
+    ></div>
+    <div
+      class="absolute bottom-[-100px] left-[-100px] w-64 h-64 rounded-full opacity-15"
+      style="background-color: #009e8e;"
+    ></div>
+
+    <div class="relative z-10">
+      <h2 class="text-3xl font-bold text-center mb-10" style="color: #00796b;">HISTORIAL MÉDICO</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="space-y-8">
+
+          <div
+            class="rounded-2xl p-6 shadow-lg text-gray-800"
+            style="background-color: #ffffff; border: 1px solid #eeebeb;"
+          >
+            <div
+              class="relative -mt-6 -mx-6 mb-4 pt-6 pb-2 px-6 rounded-t-2xl"
+              style="background: linear-gradient(100deg, #4db6ac 50%, #80cbc4 100%); color: white; border-bottom: 1px solid #00796b; height: 10px; opacity: 0.5;"
+            ></div>
+            <div class="text-lg space-y-2 -mt-4">
+              <p class="font-semibold">{{ datosDestacados.nombre }}</p>
+              <p>
+                <span class="font-semibold">Edad:</span> {{ datosDestacados.edad }} |
+                <span class="font-semibold">Grupo Sanguíneo:</span> {{ datosDestacados.grupoSanguineo }}
+              </p>
+              <p><span class="font-semibold">Alergias:</span> {{ datosDestacados.alergias }}</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
+          >
+            <h3 class="text-xl font-semibold mb-4 border-b pb-2" style="color: #00796b;">Diagnósticos</h3>
+
+            <div class="space-y-4">
+              <div *ngFor="let diag of diagnosticos" class="text-sm rounded-lg p-3" style="background-color: #e0f2f1; border: 1px solid #b2dfdb;">
+                <p class="font-bold text-gray-700">({{ diag.fecha }})</p>
+                <p class="text-gray-600">{{ diag.descripcion }}</p>
+              </div>
+            </div>
+
+            <div *ngIf="diagnosticos.length === 0" class="text-gray-500 text-center pt-4">
+              No hay diagnósticos recientes.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="space-y-8">
+
+          <div
+            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
+          >
+            <h3 class="text-xl font-semibold mb-4 border-b pb-2" style="color: #00796b;">Documentación Clínica</h3>
+
+            <div class="space-y-3">
+              <div
+                *ngFor="let doc of documentacion"
+                (click)="descargarDocumento(doc.nombre)"
+                class="flex justify-between items-center text-gray-700 cursor-pointer p-3 rounded-lg hover:bg-teal-50 transition-colors border"
+              >
+                <span>{{ doc.nombre }}</span>
+                <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
+          >
+            <h3 class="text-xl font-semibold mb-4 border-b pb-2" style="color: #00796b;">Nuevo Documento</h3>
+
+            <div
+              (click)="seleccionarArchivos()"
+              class="border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors"
+              style="border-color: #4db6ac; background-color: #e0f2f1;"
+            >
+              <p class="text-sm font-medium text-gray-700">
+                Arrastra aquí tus documentos o haz click para seleccionar tus archivos (PDF, imágenes)
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

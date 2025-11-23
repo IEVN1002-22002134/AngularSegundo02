@@ -1,0 +1,61 @@
+<div
+  class="w-full relative"
+>
+
+    <h2 class="text-2xl font-bold text-center mb-8" style="color: #00796b;">AGREGAR INFORMACIÓN</h2>
+
+    <div class="flex justify-center mb-8">
+      <button
+        *ngFor="let tab of tabs"
+        (click)="seleccionarTab(tab.key)"
+        class="text-lg font-semibold px-6 py-2 transition-all duration-200"
+
+        style="background-color: #4db6ac; color: white; margin: 0 4px; border-radius: 1rem 1rem 0 0;"
+      >
+        {{ tab.nombre }}
+      </button>
+    </div>
+
+    <div *ngIf="activeTab === 'diagnosticos'">
+
+        <div
+            class="rounded-2xl p-6 shadow-lg border border-gray-200 -mt-10 pt-16"
+            style="background-color: #e0f2f1; border: 1px solid #b2dfdb;"
+        >
+            <h3 class="text-xl font-semibold mb-6" style="color: #00796b;">Diagnósticos</h3>
+
+            <div class="space-y-4 mb-10">
+                <div
+                    *ngFor="let doc of documentosDiagnosticos"
+                    class="flex items-center text-gray-700 p-3 rounded-full border border-gray-300 relative overflow-hidden"
+                    style="background-color: white;"
+                >
+                    <div class="absolute right-[-10px] top-[-10px] w-8 h-8 rounded-full opacity-30" style="background-color: #4db6ac;"></div>
+                    <span class="ml-2 z-10">{{ doc.nombre }}</span>
+                </div>
+
+                <div
+                    class="h-10 border border-gray-300 rounded-full opacity-50 relative overflow-hidden"
+                    style="background-color: white;"
+                >
+                     <div class="absolute right-[-10px] top-[-10px] w-8 h-8 rounded-full opacity-30" style="background-color: #4db6ac;"></div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="text-lg font-semibold text-center mb-4" style="color: #00796b;">Nuevo Documento</h4>
+
+                <div
+                    (click)="seleccionarArchivos()"
+                    class="border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-colors"
+                    style="border-color: #4db6ac; background-color: white;"
+                >
+                    <p class="text-sm font-medium text-gray-700">
+                        Arrastra aquí tus documentos o haz clic para seleccionar tus archivos (PDF, imágenes)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

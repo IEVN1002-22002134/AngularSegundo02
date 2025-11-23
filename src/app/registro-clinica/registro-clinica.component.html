@@ -1,0 +1,155 @@
+<div class="flex items-center justify-center min-h-screen p-4"
+     style="background-color: #f7fcfb; position: relative; overflow: hidden;">
+
+    <div class="absolute w-64 h-64 rounded-full" style="background-color: #9be3dc; top: -5rem; left: -5rem; opacity: 0.6;"></div>
+    <div class="absolute w-40 h-40 rounded-full" style="background-color: #80cbc4; bottom: 0rem; left: -10rem; opacity: 0.8;"></div>
+    <div class="absolute w-56 h-56 rounded-full" style="background-color: #80cbc4; top: 5rem; right: -12rem; opacity: 0.8;"></div>
+    <div class="absolute w-48 h-48 rounded-full" style="background-color: #a0edd5; bottom: -5rem; right: -8rem; opacity: 0.6;"></div>
+
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 z-10"
+         style="box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 5px 15px -5px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.05);">
+
+        <div class="flex flex-col items-center mb-6">
+            <h2 class="text-2xl font-semibold" style="color: #4a5568;">Datos de la Entidad Médica</h2>
+        </div>
+
+        <form (ngSubmit)="onSubmit()">
+
+            <h3 class="text-base font-medium text-gray-700 mb-4">Datos Personales:</h3>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <input
+                        type="text"
+                        name="nombreComercial"
+                        [(ngModel)]="nombreComercial"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="Nombre Comercial *"
+                        required
+                    >
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        name="rfc"
+                        [(ngModel)]="rfc"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="RFC *"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <select
+                        name="tipoEstablecimiento"
+                        [(ngModel)]="tipoEstablecimiento"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 text-gray-500 appearance-none bg-white transition duration-150"
+                        required
+                    >
+                        <option value="" disabled selected>Tipo de Establecimiento*</option>
+                        <option *ngFor="let tipo of tiposEstablecimiento" [value]="tipo">{{ tipo }}</option>
+                    </select>
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        name="razonSocial"
+                        [(ngModel)]="razonSocial"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="Razón Social *"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <input
+                    type="email"
+                    name="correoInstitucional"
+                    [(ngModel)]="correoInstitucional"
+                    class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                    placeholder="Correo Electrónico Institucional*"
+                    required
+                >
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <div>
+                    <input
+                        type="password"
+                        name="contrasena"
+                        [(ngModel)]="contrasena"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="Contraseña*"
+                        required
+                    >
+                </div>
+                <div>
+                    <input
+                        type="password"
+                        name="confirmarContrasena"
+                        [(ngModel)]="confirmarContrasena"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="Confirmar Contraseña*"
+                        required
+                    >
+                </div>
+            </div>
+
+            <h3 class="text-base font-medium text-gray-700 mb-4">Domicilio Principal</h3>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <input
+                        type="text"
+                        name="codigoPostal"
+                        [(ngModel)]="codigoPostal"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="Código Postal*"
+                        required
+                    >
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        name="calleNumero"
+                        [(ngModel)]="calleNumero"
+                        class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                        placeholder="Calle y Número*"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <input
+                    type="text"
+                    name="coloniaSector"
+                    [(ngModel)]="coloniaSector"
+                    class="w-full text-sm border border-gray-300 rounded-full px-4 py-2.5 focus:ring-teal-500 focus:border-teal-500 transition duration-150"
+                    placeholder="Colonia / Sector*"
+                    required
+                >
+            </div>
+
+            <div class="flex flex-col items-center">
+                <button
+                    type="submit"
+                    class="text-white font-medium rounded-full text-sm w-full sm:w-2/3 md:w-1/2 px-5 py-2.5 text-center transition duration-150 ease-in-out hover:shadow-lg"
+                    style="background-color: #4db6ac; box-shadow: 0 4px 10px -1px rgba(77, 182, 172, 0.5);"
+                    onmouseover="this.style.backgroundColor='#00897b'"
+                    onmouseout="this.style.backgroundColor='#4db6ac'"
+                >
+                    REGISTRAR
+                </button>
+
+                <p class="mt-4 text-xs text-gray-500">
+                    Acepto
+                    <a href="#" class="font-semibold hover:underline" style="color: #4db6ac;">términos y condiciones</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

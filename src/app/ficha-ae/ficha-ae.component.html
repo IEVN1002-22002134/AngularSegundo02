@@ -1,0 +1,67 @@
+<div
+  class="flex items-center justify-center py-10 min-h-screen"
+  style="background-color: #f7fcfb;"
+>
+  <div class="relative w-full max-w-2xl flex justify-center items-center">
+
+    <div
+      class="absolute bottom-[-100px] left-[-100px] w-64 h-64 rounded-full opacity-30"
+      style="background-color: #4db6ac;"
+    ></div>
+
+    <div
+      class="absolute top-[-50px] right-[-50px] w-48 h-48 rounded-full opacity-30"
+      style="background-color: #4db6ac;"
+    ></div>
+
+    <div
+      class="bg-white rounded-[32px] shadow-2xl p-10 mx-auto relative z-10 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8"
+      style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05); border: 1px solid #e0f2f1;"
+    >
+
+      <div
+        class="flex-shrink-0 w-32 h-32 rounded-full flex items-center justify-center"
+        style="background-color: #b2dfdb; color: #00796b;"
+      >
+        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+      </div>
+
+      <div class="flex-grow text-gray-800">
+        <h4 class="text-xl font-bold mb-4" style="color: #00796b;">FICHA DE ACCESO DE EMERGENCIA</h4>
+
+        <div class="mb-5 space-y-1">
+          <p class="font-normal text-lg">
+            <span class="font-semibold">Nombre:</span> {{ pacienteEmergencia.nombre }}
+          </p>
+          <p class="font-normal text-lg">
+            <span class="font-semibold">Edad:</span> {{ pacienteEmergencia.edad }}
+          </p>
+        </div>
+
+        <div
+          class="text-white text-center font-semibold rounded-lg py-2 mb-5"
+          style="background-color: #4db6ac;"
+        >
+          !DESTACADOS!
+        </div>
+
+        <div class="space-y-3 text-base">
+          <p class="font-normal">
+            <span class="font-semibold">Grupo Sanguíneo:</span> {{ pacienteEmergencia.grupoSanguineo }}
+          </p>
+          <p class="font-normal">
+            <span class="font-semibold">Alergias:</span> {{ pacienteEmergencia.alergias }}
+          </p>
+          <p class="font-normal">
+            <span class="font-semibold">Enfermedades Crónicas:</span> {{ pacienteEmergencia.enfermedadesCronicas }}
+          </p>
+          <p class="font-normal">
+            <span class="font-semibold">Medicamentos Activos:</span> {{ pacienteEmergencia.medicamentosActivos }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

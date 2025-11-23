@@ -1,0 +1,143 @@
+<div class="flex min-h-screen font-sans" style="background-color: #f7fcfb;">
+
+  <div class="w-1/5 min-h-screen p-4 flex flex-col items-end"
+       style="background-color: transparent; padding-right: 0;">
+
+    <div class="w-full h-full rounded-l-3xl overflow-hidden shadow-xl"
+         style="background-color: #4db6ac; box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.05);">
+
+      <div class="text-white text-xl font-semibold py-6 px-8 transition duration-150"
+           [ngClass]="{'opacity-70': menuLateralActivo !== 'Historial'}"
+           (click)="menuLateralActivo = 'Historial'"
+           style="background-color: #4db6ac;">
+        Historial
+      </div>
+
+      <div class="flex items-center text-white text-xl font-semibold py-6 px-8 cursor-pointer transition duration-150"
+           [ngClass]="{'bg-white bg-opacity-10 shadow-lg': menuLateralActivo === 'Agregar Información'}"
+           (click)="menuLateralActivo = 'Agregar Información'"
+           style="background-color: #55b8a5;">
+        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        Agregar Información
+      </div>
+
+      <div class="h-full" style="background-color: #55b8a5;"></div>
+    </div>
+  </div>
+
+  <div class="flex-1 p-8 pr-16 pl-4 flex justify-center items-start">
+    <div class="w-full max-w-4xl bg-white rounded-3xl p-10 shadow-2xl"
+         style="box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 5px 15px -5px rgba(0, 0, 0, 0.05);">
+
+      <h2 class="text-xl font-bold text-center mb-8" style="color: #1a4747;">
+        AGREGAR INFORMACIÓN
+      </h2>
+
+      <div class="flex justify-center mb-10 space-x-0 relative z-10">
+        <div *ngFor="let tab of tabs"
+             class="transition-all duration-200"
+             style="border-radius: 1rem 1rem 0 0; margin: 0 4px;"
+             [style.background-color]="tab.bgColor">
+
+          <button (click)="seleccionarTab(tab.key)"
+                  class="text-sm font-semibold px-6 py-2 transition duration-150"
+                  [style.background-color]="tab.bgColor"
+                  [class.shadow-md]="activeTab === tab.key"
+                  [class.opacity-70]="activeTab !== tab.key"
+                  [class.hover:opacity-100]="activeTab !== tab.key"
+                  [class.text-gray-900]="activeTab === tab.key"
+                  [class.text-gray-700]="activeTab !== tab.key"
+                  style="color: #1a4747;">
+            {{ tab.nombre }}
+          </button>
+        </div>
+      </div>
+      <div
+        class="rounded-2xl p-6 shadow-lg border border-gray-200 -mt-10 pt-16"
+        style="background-color: #d1f7f0; border: 1px solid #b2dfdb;"
+      >
+
+        <div *ngIf="activeTab === 'clinicos'">
+          <h3 class="text-lg font-semibold mb-4" style="color: #1a4747;">
+            Resultados Clínicos
+          </h3>
+
+          <div *ngFor="let doc of documentosClinicos" class="mb-4">
+            <input
+              type="text"
+              [value]="doc.nombre"
+              readonly
+              class="w-full text-sm rounded-full p-3.5 text-gray-700 focus:outline-none"
+              style="border: 1px solid #b2dfdb; background-color: white;"
+            />
+          </div>
+
+          <input
+            type="text"
+            readonly
+            class="w-full text-sm rounded-full p-3.5 text-gray-400 opacity-70 mb-8 focus:outline-none"
+            style="border: 1px solid #b2dfdb; background-color: white;"
+          />
+
+          <h3 class="text-md font-semibold text-center mt-10 mb-4" style="color: #1a4747;">
+            Nuevo Documento
+          </h3>
+
+          <div (dragover)="onDragOver($event)"
+               (drop)="onDrop($event)"
+               (click)="seleccionarArchivos()"
+               class="w-full text-sm rounded-2xl p-8 text-center cursor-pointer transition duration-200"
+               style="border: 2px dashed #4db6ac; background-color: #e0f2f1; color: #1a4747;">
+            Arrasta aquí tus documentos o haz clic para seleccionar tus archivos (PDF, imágenes)
+            <input type="file" id="fileUpload" class="hidden" multiple>
+          </div>
+        </div>
+
+        <div *ngIf="activeTab === 'diagnosticos'">
+          <h3 class="text-lg font-semibold mb-4" style="color: #1a4747;">
+            Diagnósticos
+          </h3>
+          <p class="text-gray-600">Aquí se cargan los documentos de diagnósticos.</p>
+        </div>
+
+        <div *ngIf="activeTab === 'recetas'">
+          <h3 class="text-lg font-semibold mb-4" style="color: #1a4747;">
+            Recetas
+          </h3>
+
+          <div *ngFor="let doc of documentosRecetas" class="mb-4">
+            <input
+              type="text"
+              [value]="doc.nombre"
+              readonly
+              class="w-full text-sm rounded-full p-3.5 text-gray-700 focus:outline-none"
+              style="border: 1px solid #b2dfdb; background-color: white;"
+            />
+          </div>
+
+          <input
+            type="text"
+            readonly
+            class="w-full text-sm rounded-full p-3.5 text-gray-400 opacity-70 mb-8 focus:outline-none"
+            style="border: 1px solid #b2dfdb; background-color: white;"
+          />
+
+          <h3 class="text-md font-semibold text-center mt-10 mb-4" style="color: #1a4747;">
+            Nuevo Documento
+          </h3>
+
+          <div (dragover)="onDragOver($event)"
+               (drop)="onDrop($event)"
+               (click)="seleccionarArchivos()"
+               class="w-full text-sm rounded-2xl p-8 text-center cursor-pointer transition duration-200"
+               style="border: 2px dashed #4db6ac; background-color: #e0f2f1; color: #1a4747;">
+            Arrasta aquí tus documentos o haz clic para seleccionar tus archivos (PDF, imágenes)
+            <input type="file" id="fileUpload" class="hidden" multiple>
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>

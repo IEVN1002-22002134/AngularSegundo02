@@ -1,0 +1,77 @@
+<div
+  class="flex min-h-screen"
+  style="background-color: #f7fcfb;"
+>
+
+  <aside
+    class="w-64 flex-shrink-0 p-8 rounded-r-[32px] shadow-lg hidden md:block"
+    style="background-color: #4db6ac; box-shadow: 10px 0 20px -5px rgba(0,0,0,0.1);"
+  >
+    <nav class="space-y-4">
+      <div
+        *ngFor="let opcion of menuOpciones"
+        (click)="seleccionarOpcion(opcion)"
+        class="flex items-center gap-3 text-white font-semibold rounded-xl px-4 py-3 cursor-pointer transition-all duration-150"
+        [ngClass]="{
+          'bg-teal-700 shadow-md': opcion.activo,
+          'hover:bg-teal-600': !opcion.activo
+        }"
+      >
+        <svg *ngIf="opcion.icono === 'history'" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <svg *ngIf="opcion.icono === 'add'" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+
+        <span class="text-lg">{{ opcion.nombre }}</span>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="flex-grow p-8">
+
+    <div
+        class="w-full bg-white rounded-[32px] shadow-xl p-10 relative"
+        style="box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05); border: 1px solid #e0f2f1;"
+    >
+        <h2 class="text-3xl font-bold text-center mb-10" style="color: #00796b;">HISTORIAL MÉDICO</h2>
+
+        <div class="space-y-8">
+            <div
+                class="rounded-2xl p-6 shadow-lg text-gray-800"
+                style="background-color: #e0f2f1; border: 1px solid #b2dfdb;"
+            >
+                <div class="relative -mt-6 -mx-6 mb-4 pt-6 pb-2 px-6 rounded-t-2xl" style="background: linear-gradient(100deg, #4db6ac 50%, #80cbc4 100%); color: white; border-bottom: 1px solid #00796b; height: 10px; opacity: 0.5;"></div>
+                <div class="text-lg space-y-2 -mt-4">
+                    <p class="font-semibold">Matilde Susana Gonzalez Blas</p>
+                    <p>
+                        <span class="font-semibold">Edad:</span> 21 |
+                        <span class="font-semibold">Grupo Sanguíneo:</span> O+
+                    </p>
+                    <p><span class="font-semibold">Alergias:</span> Loratadina</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
+            >
+                <h3 class="text-xl font-semibold mb-4 border-b pb-2" style="color: #00796b;">Diagnósticos</h3>
+
+                <div class="space-y-4">
+                    <div class="text-sm rounded-lg p-3" style="background-color: #e0f2f1; border: 1px solid #b2dfdb;">
+                        <p class="font-bold text-gray-700">(2023-10-15)</p>
+                        <p class="text-gray-600">Infección respiratoria leve. Tratamiento con antibiótico por 7 días.</p>
+                    </div>
+                    <div class="text-sm rounded-lg p-3" style="background-color: #e0f2f1; border: 1px solid #b2dfdb;">
+                        <p class="font-bold text-gray-700">(2024-01-20)</p>
+                        <p class="text-gray-600">Revision de alergias estacionales. Receta de antihistamínico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  </main>
+</div>

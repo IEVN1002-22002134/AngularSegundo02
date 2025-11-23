@@ -1,0 +1,90 @@
+<div
+  class="flex items-start justify-center py-10 min-h-screen"
+  style="background-color: #f7fcfb;"
+>
+  <div
+    class="w-full max-w-5xl bg-white rounded-[32px] shadow-2xl p-10 mx-auto relative overflow-hidden"
+    style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05); border: 1px solid #e0f2f1;"
+  >
+
+    <div
+      class="absolute top-[-40px] right-[-40px] w-40 h-40 rounded-full opacity-30"
+      style="background-color: #4db6ac;"
+    ></div>
+    <div
+      class="absolute bottom-[-80px] left-[-80px] w-64 h-64 rounded-full opacity-30"
+      style="background-color: #4db6ac;"
+    ></div>
+
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <div>
+
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+            style="background-color: #b2dfdb; color: #00796b;"
+          >
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </div>
+
+          <div>
+             <h3 class="text-2xl font-semibold text-gray-800">
+              {{ paciente.nombreCompleto }}
+            </h3>
+             <button
+              (click)="editarDatosPersonales()"
+              class="text-sm font-semibold hover:text-teal-600 transition-colors mt-1"
+              style="color: #4db6ac;"
+            >
+              Editar Nombre
+            </button>
+          </div>
+        </div>
+
+        <h4 class="text-xl font-semibold text-gray-700 mb-4 mt-8 border-b pb-2" style="color: #00796b;">Datos personales</h4>
+
+        <div class="space-y-4 text-gray-700 text-base">
+          <p><strong>Edad:</strong> {{ paciente.edad }}</p>
+          <p><strong>Fecha de nacimiento:</strong> {{ paciente.fechaNacimiento | date:'dd/MMM/yyyy':'':'es' }}</p>
+          <p><strong>Género:</strong> {{ paciente.genero }}</p>
+          <p><strong>Número de teléfono:</strong> {{ paciente.numeroTelefono }}</p>
+          <p><strong>CURP:</strong> {{ paciente.curp }}</p>
+        </div>
+
+        <div class="mt-8 text-right">
+          <button
+            (click)="editarDatosPersonales()"
+            class="text-base font-semibold hover:text-teal-600 transition-colors"
+            style="color: #4db6ac;"
+          >
+            Editar Datos
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-2 lg:pt-0 border-t lg:border-t-0 lg:border-l border-gray-200 lg:pl-12">
+
+        <div class="flex justify-between items-center mb-6">
+          <h4 class="text-xl font-semibold text-gray-700" style="color: #00796b;">INFORMACIÓN CONSULTORIO</h4>
+          <button
+            (click)="editarInfoConsultorio()"
+            class="text-base font-semibold hover:text-teal-600 transition-colors"
+            style="color: #4db6ac;"
+          >
+            Editar
+          </button>
+        </div>
+
+        <div class="space-y-4 text-gray-700 text-base">
+          <p><strong>Ubicación:</strong> {{ consultorio.ubicacion }}</p>
+          <p><strong>Consultorio:</strong> {{ consultorio.consultorio }}</p>
+          <p><strong>My doctor:</strong> {{ consultorio.myDoctor }}</p>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</div>
